@@ -14,7 +14,6 @@ The key points of this was developing variables to distiniguish your character b
 ## Project Display
 
 
-
 ## Acceptance Criteria 
 
 GIVEN I need a new, secure password
