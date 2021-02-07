@@ -24,24 +24,24 @@ function generatePassword() {
   var includesUppers = confirm("Would you like to have uppercase letters in your password?");
 
   // Variable to contain array of selected character arrays
-  var possibles = [];
+  var Outcomes = [];
 
   // Push selected arrays to possibles variable
   if (includeSpecials) {
-    possibles.push(specials);
+    Outcomes.push(specials);
   }
   if (includesLowers) {
-    possibles.push(lowers);
+    Outcomes.push(lowers);
   }
   if (includesUppers) {
-    possibles.push(uppers);
+    Outcomes.push(uppers);
   }
   if (includesNumbers) {
-    possibles.push(numbers);
+    Outcomes.push(numbers);
   }
 
   // Verify user has selected at least one array
-  if (!possibles.length) {
+  if (!Outcomes.length) {
     alert("You must select at least one character type. Please try again.");
     return
   }
@@ -50,11 +50,11 @@ function generatePassword() {
   var result = "";
 
   // Function generatePassword to pass the password
-  console.log(possibles);
+  console.log(Outcomes);
   console.log(result);
   for (var i = 0; i < pwLength; i++) {
     // Select random array from possible array
-    var randomArray = possibles[Math.floor(Math.random() * possibles.length)];
+    var randomArray = Outcomes[Math.floor(Math.random() * Outcomes.length)];
     console.log(randomArray);
     // Select random character from the randomly selected array
     var randomChar = randomArray[Math.floor(Math.random() * randomArray.length)];
