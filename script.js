@@ -1,42 +1,42 @@
 // Retrieve first element in document with id "generate" (index.html line 25)
 var generateBtn = document.querySelector("#generate");
 
-// Function to generate password from user selection criteria
+// Function to generate password from the criteria
 function generatePassword() {
 
-//Set up variables to access your character bank
+//Here you want to set variables that will become your character bank
   var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var specials = ["!", "@", "#", "$", "%", "^", "\&", "*", "\(", "\)"];
   var lowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-  // Prompt your user 
-  var pwLength = parseInt(prompt("What length does the password need to be? It must be between 8 and 128 characters in length."));
+  // This variable will create a prompt for your user 
+  var pwLength = parseInt(prompt("You must select a password be between 8 and 128 characters in length."));
     // Verify password length within parameters
     if (pwLength < 8 || pwLength > 128) {
       // 
       alert("It must be between 8 and 128 characters in length")
       return
     }
-  var wantsSpecials = confirm("Would you like to have special characters in your password?");
-  var wantsNumbers = confirm("Would you like to have numbers in your password?")
-  var wantsLowers = confirm("Would you like to have lowercase letters in your password?");
-  var wantsUppers = confirm("Would you like to have uppercase letters in your password?");
+  var includeSpecials = confirm("Would you like to have special characters in your password?");
+  var includesNumbers = confirm("Would you like to have numbers in your password?")
+  var includesLowers = confirm("Would you like to have lowercase letters in your password?");
+  var includesUppers = confirm("Would you like to have uppercase letters in your password?");
 
   // Variable to contain array of selected character arrays
   var possibles = [];
 
   // Push selected arrays to possibles variable
-  if (wantsSpecials) {
+  if (includeSpecials) {
     possibles.push(specials);
   }
-  if (wantsLowers) {
+  if (includesLowers) {
     possibles.push(lowers);
   }
-  if (wantsUppers) {
+  if (includesUppers) {
     possibles.push(uppers);
   }
-  if (wantsNumbers) {
+  if (includesNumbers) {
     possibles.push(numbers);
   }
 
@@ -46,7 +46,7 @@ function generatePassword() {
     return
   }
 
-  // Variable for random password
+  // This variable will create a random password 
   var result = "";
 
   // Function generatePassword to pass the password
