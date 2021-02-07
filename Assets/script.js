@@ -1,4 +1,3 @@
-// Retrieve first element in document with id "generate" (index.html line 25)
 var generateBtn = document.querySelector("#generate");
 
 // Function to generate password from the criteria
@@ -13,7 +12,7 @@ function generatePassword() {
   // This variable will create a prompt for your user 
   var pwLength = parseInt(prompt("You must select a password be between 8 and 128 characters in length."));
   // Verify password length within parameters 
-    if (pwLength < 8) {
+    if (pwLength <8) {
       alert("It must be more than 8 characters")
       return
     }
@@ -55,7 +54,7 @@ function generatePassword() {
   // Function generatePassword to pass the password
   console.log(Outcomes);
   console.log(result);
-  for (var i = 0; i < pwLength; i++) {
+  for (var i = 0; i <pwLength; i++) {
     // This allows us to select a random array
     var randomArray = Outcomes[Math.floor(Math.random() * Outcomes.length)];
     console.log(randomArray);
