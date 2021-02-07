@@ -5,19 +5,22 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
 
 //Here you want to set variables that will become your character bank
-  var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var specials = ["!", "@", "#", "$", "%", "^", "\&", "*", "\(", "\)"];
-  var lowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var Numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var Specials = ["!", "@", "#", "$", "%", "^", "\&", "*", "\(", "\)"];
+  var Lowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var Uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
   // This variable will create a prompt for your user 
   var pwLength = parseInt(prompt("You must select a password be between 8 and 128 characters in length."));
-    // Verify password length within parameters
-    if (pwLength < 8 || pwLength > 128) {
-      // 
-      alert("It must be between 8 and 128 characters in length")
+  // Verify password length within parameters 
+    if (pwLength < 8) {
+      alert("It must be more than 8 characters")
       return
     }
+    if (pwLength >128) {
+      alert("It must be less than 128 characters")
+    }
+//Create variables to prompt user to confirm if they want to select from 1 or multiple character bank variables
   var includeSpecials = confirm("Would you like to have special characters in your password?");
   var includesNumbers = confirm("Would you like to have numbers in your password?")
   var includesLowers = confirm("Would you like to have lowercase letters in your password?");
@@ -28,16 +31,16 @@ function generatePassword() {
 
   // Push selected arrays to possibles variable
   if (includeSpecials) {
-    Outcomes.push(specials);
+    Outcomes.push(Specials);
   }
   if (includesLowers) {
-    Outcomes.push(lowers);
+    Outcomes.push(Lowers);
   }
   if (includesUppers) {
-    Outcomes.push(uppers);
+    Outcomes.push(Uppers);
   }
   if (includesNumbers) {
-    Outcomes.push(numbers);
+    Outcomes.push(Numbers);
   }
 
   // Verify user has selected at least one array
@@ -53,13 +56,13 @@ function generatePassword() {
   console.log(Outcomes);
   console.log(result);
   for (var i = 0; i < pwLength; i++) {
-    // Select random array from possible array
+    // This allows us to select a random array
     var randomArray = Outcomes[Math.floor(Math.random() * Outcomes.length)];
     console.log(randomArray);
-    // Select random character from the randomly selected array
+    // This allows us to select a random charactor from our random array
     var randomChar = randomArray[Math.floor(Math.random() * randomArray.length)];
     console.log(randomChar)
-    // Write (concatenate) the character to the end of the result variable
+    // Logs our result
     result += randomChar;
     console.log(result);
   }
