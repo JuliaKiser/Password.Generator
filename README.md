@@ -13,6 +13,7 @@ The key points of this was developing variables to distiniguish your character b
 
 ## Project Display
 
+![Untitled_ Feb 7, 2021 3_22 PM](https://user-images.githubusercontent.com/73495184/107158850-b20b7300-695a-11eb-8d65-f65bd6c3d132.gif)
 
 ## Acceptance Criteria 
 
